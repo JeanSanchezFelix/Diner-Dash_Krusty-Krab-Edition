@@ -16,4 +16,4 @@ Please fill out the information below for each member of the team:
 
 ### [ Jean P. I. Sánchez Félix: jeanpiere.sanchez@upr.edu ]
 
-### [ STUDENT B NAME : STUDENT B EMAIL ]
+### [ Gabriel A. Marrero Rodriguez: gabriel.marrero9@upr.edu ]
