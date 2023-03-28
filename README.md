@@ -17,3 +17,7 @@ Please fill out the information below for each member of the team:
 ### [ Jean P. I. Sánchez Félix: jeanpiere.sanchez@upr.edu ]
 
 ### [ Gabriel A. Marrero Rodriguez: gabriel.marrero9@upr.edu ]
+
+# Decorations
+
+### Added two orchids, added cockroach in the middle, changed floor to krusty krab, background for the burger
