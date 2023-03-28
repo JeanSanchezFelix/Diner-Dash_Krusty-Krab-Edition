@@ -8,7 +8,12 @@ Player *Restaurant::getPlayer() { return player; }
 void Restaurant::setPlayer(Player *player) { this->player = player; }
 
 Restaurant::Restaurant() {
-    floor.load("images/floor.jpg");
+    floor.load("images/wood_floor.jpg");
+    cockroach.load("images/cockroach_eating_burger.png");
+    krusty_krab_background.load("images/krusty_krab_background.png");
+    blue_orchid.load("images/Orchid.png");
+    pink_orchid.load("images/pink_orchid.png");
+    burger_background.load("images/burger_background.png");
     entityManager = new EntityManager();
     ofImage chefPlayerImage;
     chefPlayerImage.load("images/chef.png");
@@ -77,6 +82,7 @@ void Restaurant::initClients(){
     people.push_back(temp);
     temp.load("images/People/Weather_Reporter2Female.png");
     people.push_back(temp);
+    
 }
 void Restaurant::tick() {
     ticks++;
@@ -98,9 +104,15 @@ void Restaurant::generateClient(){
     b->addIngredient(lettuce);
     b->addIngredient(topBread);
     entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b));
+   
 }
 void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());
+    krusty_krab_background.draw(0,0,ofGetWidth(), ofGetHeight()-200);
+    cockroach.draw(ofGetWidth()-510, ofGetHeight()-520, 230, 230);
+    blue_orchid.draw(ofGetWidth()-119, ofGetHeight()-485, 100 , 100);
+    pink_orchid.draw(ofGetWidth()-656, ofGetHeight()-595, 100 , 100);
+    burger_background.draw(ofGetWidth()-147, ofGetHeight()-792, 135, 240);
     player->render();
     entityManager->render();
     ofSetColor(0, 100, 0);
