@@ -12,7 +12,7 @@ void ofApp::setup(){
 	font.load("Krabby Patty.ttf", 56);
 	
 	// Sound
-	sound.load("music.wav");
+	sound.load("Spongebob_Goo_Lagoon.wav");
 	sound.setLoop(true);
 	sound.play();
 
@@ -25,8 +25,14 @@ void ofApp::update(){
 		if(currentState->hasFinished()){
 			if(currentState->getNextState() == "Menu"){
 				currentState = menuState;
+				sound.load("Spongebob_Goo_Lagoon.wav");
+				sound.setLoop(true);
+				sound.play();
 			}else if(currentState->getNextState() == "Game"){
 				currentState = gameState;
+				sound.load("Spongebob_Jellyfish_Fields.wav");
+				sound.setLoop(true);
+				sound.play();
 			}
 			currentState->reset();
 		}

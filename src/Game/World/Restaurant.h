@@ -27,6 +27,11 @@ class Restaurant {
         Item* botBread;
         Item* topBread;
         ofImage floor;
+        ofImage cockroach;
+        ofImage krusty_krab_background;
+        ofImage blue_orchid;
+        ofImage pink_orchid;
+        ofImage burger_background;
         void initItems();
         void initCounters();
         void initClients();

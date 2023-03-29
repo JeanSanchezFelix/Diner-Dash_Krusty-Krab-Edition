@@ -1,17 +1,20 @@
 #include "Client.h"
-
 Client::Client(int x, int y, int width, int height, ofImage sprite, Burger* burger): Entity(x, y, width, height, sprite){
     this->burger = burger;
+    
 }
 Client::~Client(){
     delete burger;
 }
 void Client::render(){
-    burger->render();
     ofSetColor (255,255,255);
+    burger->render();
+    ofSetColor(255,patience,patience);
     sprite.draw(x, y, width, height);
     if(nextClient != nullptr){
         nextClient->render();
+
+
     }
 }
 
