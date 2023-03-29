@@ -110,9 +110,10 @@ void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());
     krusty_krab_background.draw(0,0,ofGetWidth(), ofGetHeight()-200);
     cockroach.draw(ofGetWidth()-510, ofGetHeight()-520, 230, 230);
-    blue_orchid.draw(ofGetWidth()-119, ofGetHeight()-485, 100 , 100);
-    pink_orchid.draw(ofGetWidth()-656, ofGetHeight()-595, 100 , 100);
-    burger_background.draw(ofGetWidth()-147, ofGetHeight()-792, 135, 240);
+    blue_orchid.draw(ofGetWidth()-144, ofGetHeight()-482, 100 , 100);
+    pink_orchid.draw(ofGetWidth()-642, ofGetHeight()-588, 100 , 100);
+    burger_background.draw(ofGetWidth()-150, ofGetHeight()-755, 135, 200);
+    burger_background.draw(-27.5, -1, 160, 450);
     player->render();
     entityManager->render();
     ofSetColor(0, 100, 0);
