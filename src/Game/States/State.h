@@ -1,10 +1,13 @@
 #pragma once
 
 #include "ofMain.h"
+// #include "ofApp.h"
 
-class State {
+class State{
 	public:
 		State() {}
+		// State(ofTrueTypeFont* font) {};
+		// State(ofTrueTypeFont*  font): ofApp(), font(font) {};
 		virtual void reset() = 0;
 		virtual void tick() = 0;
 		virtual void render() = 0;
@@ -37,5 +40,8 @@ class State {
 	private:
 		string nextState;
 		bool finished = false;
+		ofTrueTypeFont* font;
 
 };
+
+

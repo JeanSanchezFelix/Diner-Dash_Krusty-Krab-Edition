@@ -5,11 +5,15 @@
 
 class MenuState : public State {
 private:
-	ofImage img1;
+	ofImage menuImage;
+	ofImage startImg;
 	Button *startButton;
+	ofTrueTypeFont font;
+
 
 public:
 	MenuState();
+	MenuState(ofTrueTypeFont* font);
 	void tick();
 	void render();
 	void keyPressed(int key);

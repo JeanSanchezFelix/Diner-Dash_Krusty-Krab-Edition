@@ -1,10 +1,15 @@
 #include "MenuState.h"
 
 MenuState::MenuState() {
-	string text = "Start";
-	startButton = new Button(ofGetWidth()/2 - text.length()*8, ofGetHeight()/2 - text.length()*11, 64, 50, "Start");
+	startImg.load("images/ImgButton.png");
+	startButton = new Button(ofGetWidth()-320,ofGetHeight()-302, ofGetWidth()/2.5, ofGetHeight()/2.5, startImg);
+	// string text = "Start";
+	// startButton = new Button(ofGetWidth()/2 - text.length()*8, ofGetHeight()/2 - text.length()*11, 64, 50, "Start");
+	menuImage.load("images/MenuBG.jpg");	
+
 }
-void MenuState::tick() {
+
+void MenuState::tick() {	
 	startButton->tick();
 	if(startButton->wasPressed()){
 		setNextState("Game");
@@ -13,16 +18,26 @@ void MenuState::tick() {
 	}
 }
 void MenuState::render() {
-	ofSetBackgroundColor(230, 230, 250);
+	ofSetColor(256, 256, 256);
+	// ofTrueTypeFont& font = getFont();
+	// font.drawString("Font String", 100, 100);
+	menuImage.draw(0,0, ofGetWidth(), ofGetHeight());
 	startButton->render();
+
+	ofSetColor(0);
+    ofDrawBitmapString("Press 's' to serve the Burger", ofGetWidth()/2 - 335 , ofGetHeight()/2 + 190);
+	ofDrawBitmapString("Press 'e' to pickup ingredients", ofGetWidth()/2 - 335 , ofGetHeight()/2 + 250);
+	ofDrawBitmapString("Click below to start the game", ofGetWidth()/2 + 133, ofGetHeight()/2 + 85);
 }
 
 void MenuState::keyPressed(int key){
-	
+
+
 }
 
 void MenuState::mousePressed(int x, int y, int button){
 	startButton->mousePressed(x, y);
+
 }
 
 void MenuState::reset(){

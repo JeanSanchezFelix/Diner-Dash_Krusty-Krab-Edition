@@ -5,12 +5,21 @@ Button::Button(){
     this->width = 64;
     this->height = 20; 
 }
+
 Button::Button(int xPos, int yPos, int width, int height, string buttonText){
     this->xPos = xPos;
     this->yPos = yPos;
     this->width = width;
     this->height = height;
     this->buttonText = buttonText;
+}
+
+Button::Button(int xPos, int yPos, int width, int height, ofImage buttonImage){
+    this->xPos = xPos;
+    this->yPos = yPos;
+    this->width = width;
+    this->height = height;
+    this->buttonImage = buttonImage;
 }
 
 void Button::reset(){
@@ -36,6 +45,9 @@ void Button::mousePressed(int x, int y){
 void Button::render(){
     ofSetColor(0);
     ofDrawBitmapString(buttonText, xPos+width/2, yPos+height/2);
+
+    ofSetColor(256, 256, 256);
+	buttonImage.draw(ofGetWidth()-320,ofGetHeight()-302, ofGetWidth()/2.5, ofGetHeight()/2.5);
 }
 
 bool Button::wasPressed(){

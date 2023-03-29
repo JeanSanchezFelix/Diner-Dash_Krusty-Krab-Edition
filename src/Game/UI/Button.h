@@ -5,6 +5,7 @@ class Button {
     public:
         Button();
         Button(int, int, int, int, string);
+        Button(int, int, int, int, ofImage);
         void mousePressed(int x, int y);
         void tick();
         void render();
