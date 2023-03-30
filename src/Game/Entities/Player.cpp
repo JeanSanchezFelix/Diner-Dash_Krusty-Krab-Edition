@@ -98,6 +98,16 @@ void Player::keyPressed(int key){
         }
     }
 
+    if(key == 'u'){
+        BaseCounter* ac = getActiveCounter();
+        if (ac != nullptr){
+            Item* item = ac->getItem();
+            if (item != nullptr){
+                burger->removeIngredient();
+            }
+        }
+    }
+
     if (key == OF_KEY_LEFT){
         facing = "left";
         if(x >= 0){

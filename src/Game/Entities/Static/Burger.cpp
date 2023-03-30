@@ -15,6 +15,11 @@ void Burger::addIngredient(Item *item) {
     ingredients.push_back(item);
 }
 
+void Burger::removeIngredient() {
+    ingredients.pop_back();
+}
+
+
 void Burger::render(){
     int counter = 1;
     for (Item* ingredient:ingredients){
