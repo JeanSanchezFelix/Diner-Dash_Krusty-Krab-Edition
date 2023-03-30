@@ -4,7 +4,8 @@ void ofApp::setup(){
 	ofSetWindowTitle("Dinner Dash (Krusty Krab edition)");
 	//States
 	menuState = new MenuState();
-	gameState = new GameState();
+    gameState = new GameState();
+    // loseState = new LoseState(); this is something i need to fix
 	// Initial State
 	currentState = menuState;
 
@@ -33,6 +34,9 @@ void ofApp::update(){
 				sound.load("Spongebob_Jellyfish_Fields.wav");
 				sound.setLoop(true);
 				sound.play();
+				if(player_left>=10){
+					// currentState = loseState;
+				}
 			}
 			currentState->reset();
 		}

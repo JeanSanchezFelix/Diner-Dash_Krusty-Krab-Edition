@@ -23,6 +23,7 @@ void Client::tick(){
     burger->setY(y);
     if(patience == 0){
         isLeaving = true;
+        players_left++;
     }
     if(nextClient != nullptr){
         nextClient->tick();

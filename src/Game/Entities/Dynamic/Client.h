@@ -13,7 +13,8 @@ class Client: public Entity{
         void render();
         int serve(Burger*);
         Client* nextClient=nullptr;
-        bool isLeaving=false;
+        bool isLeaving = false;
+        int players_left = 0;
 
 
 
