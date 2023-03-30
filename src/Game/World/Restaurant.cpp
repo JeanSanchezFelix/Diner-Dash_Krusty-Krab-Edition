@@ -16,8 +16,8 @@ Restaurant::Restaurant() {
     burger_background.load("images/burger_background.png");
     entityManager = new EntityManager();
     ofImage chefPlayerImage;
-    chefPlayerImage.load("images/chef.png");
-    this->player = new Player(0, 600, 64, 64, chefPlayerImage, entityManager);    
+    chefPlayerImage.load("images/SpongeBob_Sprite_Sheet.png");
+    this->player = new Player(0, 615, 85, 85, chefPlayerImage, entityManager);    
     initItems();
     initCounters();
     initClients();

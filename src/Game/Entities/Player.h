@@ -6,9 +6,15 @@
 class Player: public Entity{
 
     private:
-        int speed = 5;
+        int speed = 15;
         string facing = "right";
-        Animation *chefAnim;
+        int idleTimer = 0;
+        bool idle = true;
+
+        Animation *currentAnim;
+        Animation *IdleAnim;
+        Animation *MovingAnim;
+
         Burger *burger;
         EntityManager* entityManager;
     public:
