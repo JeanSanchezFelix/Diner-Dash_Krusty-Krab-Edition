@@ -13,8 +13,6 @@ void Client::render(){
     sprite.draw(x, y, width, height);
     if(nextClient != nullptr){
         nextClient->render();
-
-
     }
 }
 
@@ -31,5 +29,5 @@ void Client::tick(){
 
 int Client::serve(Burger* burger){
     isLeaving = true;
-    return 10;
+    return burger->getPrice();
 }

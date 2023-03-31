@@ -10,5 +10,5 @@ public:
     Item(ofImage, string);
     ofImage sprite;
     string name;
-   
+    string getName();  
 };

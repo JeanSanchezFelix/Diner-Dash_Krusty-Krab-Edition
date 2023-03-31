@@ -9,3 +9,7 @@ Item::Item(ofImage sprite, string name){
     this->sprite = sprite;
 
 }
+
+string Item::getName(){ 
+    return name; 
+}
