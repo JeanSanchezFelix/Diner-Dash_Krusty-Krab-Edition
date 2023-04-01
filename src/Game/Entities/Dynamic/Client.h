@@ -7,6 +7,7 @@ class Client: public Entity{
         int originalPatience;
         int patience=2000;
     public:
+        Client(){};
         Client(int, int, int, int, ofImage, Burger*);
         virtual ~Client();
         void tick();
@@ -14,7 +15,8 @@ class Client: public Entity{
         int serve(Burger*);
         Client* nextClient=nullptr;
         bool isLeaving = false;
-        int players_left = 0;
+        // int players_left = 0;
+        int getPatience(){return patience;}
 
 
 

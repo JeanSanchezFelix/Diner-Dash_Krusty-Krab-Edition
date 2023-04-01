@@ -3,13 +3,16 @@
 #include "ofMain.h"
 #include "MenuState.h"
 #include "GameState.h"
-
+#include "LoseState.h"
+#include "WinState.h"
 class ofApp : public ofBaseApp{
 
 private:
 	State *currentState;
 	MenuState *menuState;
 	GameState *gameState;
+	LoseState *loseState;
+	WinState *winState;
 	ofTrueTypeFont font; 
 	ofSoundPlayer sound;
 
@@ -31,4 +34,7 @@ public:
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);	
 		ofTrueTypeFont& getFont();
+		// Client Client;
+		// int players_left = Client.players_left;
+		// int getPlayer_left(){return players_left};
 };

@@ -18,6 +18,9 @@ void EntityManager::removeLeavingClients(){
     
     while(tempClient != nullptr){
         if(tempClient->isLeaving){
+            if(tempClient->getPatience()== 0){
+                players_left++;
+            }
             if(prevClient == nullptr){
                 firstClient = tempClient->nextClient;
                 delete tempClient;

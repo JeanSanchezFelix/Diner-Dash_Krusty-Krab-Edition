@@ -14,8 +14,9 @@ class Restaurant {
         EntityManager* entityManager;
         int ticks=0;
         std::vector<ofImage> people;
-        int money =0;
-
+        int money = 0;
+        int ingredients_cost = 0;
+        
     public:
         Restaurant();
         Player* getPlayer();
@@ -40,4 +41,8 @@ class Restaurant {
         void tick();
         void render();
         void keyPressed(int key);
+        int getMoney(){return money;}
+        int restaurant_getPL(){
+            return entityManager->getPL();
+        }
 };
