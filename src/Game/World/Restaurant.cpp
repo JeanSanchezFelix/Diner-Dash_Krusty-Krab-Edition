@@ -38,9 +38,9 @@ void Restaurant::initItems(){
     cheese = new Item(cheeseImg, "cheese");
     lettuce = new Item(lettuceImg, "lettuce");
     tomato = new Item(tomatoImg, "tomato");
-    burger = new Item(burgerImg, "patty");
-    botBread = new Item(botBreadImg, "bottomBun");
-    topBread = new Item(topBreadImg, "topBun");
+    patty = new Item(burgerImg, "patty");
+    botBread = new Item(botBreadImg, "botBread");
+    topBread = new Item(topBreadImg, "topBread");
 }
 void Restaurant::initCounters(){
     int counterWidth = 96;
@@ -56,7 +56,7 @@ void Restaurant::initCounters(){
     breadCounterImg.cropFrom(counterSheet,0,63,34,56);//buns
     entityManager->addEntity(new BaseCounter(0,yOffset-16, counterWidth, 117, nullptr, plateCounterImg));
     entityManager->addEntity( new BaseCounter(counterWidth,yOffset-7, counterWidth,108, cheese, cheeseCounterImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*2,yOffset, counterWidth, 102, burger, stoveCounterImg));
+    entityManager->addEntity(new BaseCounter(counterWidth*2,yOffset, counterWidth, 102, patty, stoveCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*3, yOffset, counterWidth, 102, lettuce, lettuceCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*4,yOffset, counterWidth, 102, nullptr, emptyCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*5, yOffset -10, counterWidth, 113, tomato, tomatoCounterImg));
@@ -96,7 +96,7 @@ void Restaurant::tick() {
 
 
 void Restaurant::generateClient(){
-    vector<Item*> tempItems {burger, cheese, tomato, lettuce};
+    vector<Item*> tempItems {patty, cheese, tomato, lettuce};
     Burger* b = new Burger(72, 100, 50, 25);
 
     b->addIngredient(botBread);

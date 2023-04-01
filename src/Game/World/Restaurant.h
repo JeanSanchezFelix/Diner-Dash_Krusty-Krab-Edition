@@ -13,6 +13,7 @@ class Restaurant {
         Player* player;
         EntityManager* entityManager;
         int ticks=0;
+        unordered_map<Item*, int> pricedItem;
         std::vector<ofImage> people;
         int money = 0;
         int ingredients_cost = 0;
@@ -24,7 +25,7 @@ class Restaurant {
         Item* cheese;
         Item* lettuce;
         Item* tomato;
-        Item* burger;
+        Item* patty;
         Item* botBread;
         Item* topBread;
         ofImage floor;
