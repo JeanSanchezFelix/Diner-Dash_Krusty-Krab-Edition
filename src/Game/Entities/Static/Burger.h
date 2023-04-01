@@ -10,6 +10,7 @@ class Burger {
   private:
     int x, y, width, height;
     int price = 0;
+    int ingredients_market_cost = 0;
     vector<Item *> ingredients;
 
   public:

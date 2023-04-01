@@ -44,7 +44,7 @@ void Burger::clear(){
 
 int Burger::getPrice(){
     price = 0;
-    
+    ingredients_market_cost = 0;
 
     unordered_map<string, int> pricedItem = {  
         {"topBread", 1},
@@ -59,9 +59,10 @@ int Burger::getPrice(){
             for (unsigned int i = 0; i < ingredients.size(); i++){
                 if (item.first == ingredients[i]->getName()){
                     price += item.second;
+                    ingredients_market_cost++;
                 }
             }
         }
 
-    return price;
+    return price - ingredients_market_cost;
 }

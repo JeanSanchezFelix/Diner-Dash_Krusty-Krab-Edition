@@ -16,7 +16,6 @@ class Restaurant {
         unordered_map<Item*, int> pricedItem;
         std::vector<ofImage> people;
         int money = 0;
-        int ingredients_cost = 0;
         
     public:
         Restaurant();
