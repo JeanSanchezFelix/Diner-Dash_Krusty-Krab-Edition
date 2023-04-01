@@ -10,6 +10,13 @@ Item::Item(ofImage sprite, string name){
 
 }
 
+Item::Item(ofImage sprite, ofImage rawSprite, string name){
+    this->name = name;
+    this->sprite = sprite;
+    this->rawSprite = rawSprite;
+
+}
+
 string Item::getName(){ 
     return name; 
 }

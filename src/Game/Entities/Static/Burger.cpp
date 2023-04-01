@@ -19,8 +19,10 @@ Burger::Burger(int x, int y, int width, int height){
     this->height = height;
 }
 
-void Burger::addIngredient(Item *item) {
-    ingredients.push_back(item);
+void Burger::addIngredient(Item *item) { 
+    if(ingredients.size() <= 12){
+        ingredients.push_back(item);
+    }
 }
 
 void Burger::removeIngredient() {

@@ -13,11 +13,11 @@ Restaurant::Restaurant() {
     krusty_krab_background.load("images/krusty_krab_background.png");
     blue_orchid.load("images/Orchid.png");
     pink_orchid.load("images/pink_orchid.png");
-    burger_background.load("images/burger_background.png");
+    client_background.load("images/client_background.png");
     entityManager = new EntityManager();
     ofImage chefPlayerImage;
     chefPlayerImage.load("images/SpongeBob_Sprite_Sheet.png");
-    this->player = new Player(0, 615, 85, 85, chefPlayerImage, entityManager);    
+    this->player = new Player(0, 605, 100, 100, chefPlayerImage, entityManager);    
     initItems();
     initCounters();
     initClients();
@@ -25,10 +25,12 @@ Restaurant::Restaurant() {
 
 }
 void Restaurant::initItems(){
-    ofImage burgerSpriteSheet, cheeseImg, lettuceImg, tomatoImg, burgerImg, botBreadImg, topBreadImg, plateImg;
+    ofImage burgerSpriteSheet, rawBurgerSpriteSheet, cheeseImg, lettuceImg, tomatoImg, burgerImg, rawPattyImg, botBreadImg, topBreadImg, plateImg;
     burgerSpriteSheet.load("images/burger.png");
+    rawBurgerSpriteSheet.load("images/raw_burger.png");
     topBreadImg.cropFrom(burgerSpriteSheet, 25, 16, 112, 43); // top bun
     burgerImg.cropFrom(burgerSpriteSheet, 30, 134, 103, 48); // patty
+    rawPattyImg.cropFrom(rawBurgerSpriteSheet,30, 134, 103, 48); // Raw patty
     cheeseImg.cropFrom(burgerSpriteSheet, 169, 213, 102, 39); // cheese
     tomatoImg.cropFrom(burgerSpriteSheet, 169, 158, 110, 41); // tomato
     lettuceImg.cropFrom(burgerSpriteSheet, 161, 62, 117, 34); // lettuce
@@ -38,7 +40,8 @@ void Restaurant::initItems(){
     cheese = new Item(cheeseImg, "cheese");
     lettuce = new Item(lettuceImg, "lettuce");
     tomato = new Item(tomatoImg, "tomato");
-    patty = new Item(burgerImg, "patty");
+    patty = new Item(burgerImg, rawPattyImg, "patty");
+    // rawPatty = new Item(rawPattyImg, "rawPatty");
     botBread = new Item(botBreadImg, "botBread");
     topBread = new Item(topBreadImg, "topBread");
 }
@@ -113,8 +116,8 @@ void Restaurant::render() {
     cockroach.draw(ofGetWidth()-510, ofGetHeight()-520, 230, 230);
     blue_orchid.draw(ofGetWidth()-144, ofGetHeight()-482, 100 , 100);
     pink_orchid.draw(ofGetWidth()-642, ofGetHeight()-588, 100 , 100);
-    burger_background.draw(ofGetWidth()-150, ofGetHeight()-755, 135, 200);
-    burger_background.draw(-27.5, -1, 160, 450);
+    client_background.draw(ofGetWidth()-150, ofGetHeight()-756.5, 135, 200);
+    client_background.draw(-27.5, -1, 160, 455);
     player->render();
     entityManager->render();
     ofSetColor(0, 100, 0);

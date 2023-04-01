@@ -25,10 +25,10 @@ void MenuState::render() {
 	startButton->render();
 
 	ofSetColor(0);
-	ofDrawBitmapString("Use '<-' and '->' to Navigate", ofGetWidth()/2 - 335 , ofGetHeight()/2 + 150);
-    ofDrawBitmapString("Press 's' to serve the Burger", ofGetWidth()/2 - 335 , ofGetHeight()/2 + 200);
-	ofDrawBitmapString("Press 'e' to pickup Ingredients", ofGetWidth()/2 - 335 , ofGetHeight()/2 + 250);
-	ofDrawBitmapString("Press 'u' to remove Ingredients", ofGetWidth()/2 - 335 , ofGetHeight()/2 + 300);
+	ofDrawBitmapString("Use '<-' and '->' to Navigate", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 150);
+    ofDrawBitmapString("Press 's' to serve the Burger", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 200);
+	ofDrawBitmapString("Press 'e' to pickup Ingredients", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 250);
+	ofDrawBitmapString("Press 'u' to remove Ingredients", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 300);
 	ofDrawBitmapString("Click below to start the game", ofGetWidth()/2 + 133, ofGetHeight()/2 + 85);
 }
 
