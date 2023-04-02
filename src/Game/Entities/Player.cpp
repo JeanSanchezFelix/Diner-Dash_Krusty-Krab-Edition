@@ -6,6 +6,7 @@ Player::Player(int x, int y, int width, int height, ofImage sprite, EntityManage
 
     ofImage temp;
 
+    // New sprite for the moving animation
     vector<ofImage> BobMovingAnim;
     temp.cropFrom(sprite, 6,114,32,38);
     BobMovingAnim.push_back(temp);
@@ -30,7 +31,7 @@ Player::Player(int x, int y, int width, int height, ofImage sprite, EntityManage
 
     MovingAnim = new Animation(5, BobMovingAnim);
 
-
+    // New sprite for the idle animation
     vector<ofImage> BobIdleAnim;
     temp.cropFrom(sprite, 5,10,30,36);
     BobIdleAnim.push_back(temp);
@@ -63,6 +64,7 @@ void Player::tick(){
 
     currentAnim->tick();
 
+    // Checks if the player is moving to change the current animation respectively
     if (!idle) {
             currentAnim = MovingAnim;
     }
@@ -70,7 +72,19 @@ void Player::tick(){
          currentAnim = IdleAnim;
     }
 
+    // Checks if the 'e' key is pressed
+    if (pressed) {
+    StoveCounter* as = getActiveStove();
+        if (as != nullptr){
+            Item* item = as->getItem();
+            if (item != nullptr){
 
+                // "Cooks the item" and then shows the cooked item
+                as->tick();
+                as->showItem();   
+            }   
+        }
+    }
 }
 
 void Player::render(){
@@ -89,8 +103,32 @@ void Player::render(){
 
 void Player::keyPressed(int key){
     if(key == 'e'){
+
+        // Boolean to keep track if the player has pressed the key
+        pressed = true;
+
         BaseCounter* ac = getActiveCounter();
-        if(ac != nullptr){
+        StoveCounter* as = getActiveStove();
+
+        // Checks if the item can be find and manipulated in the stove class
+        if(as != nullptr){
+            Item* item = as->getItem();
+            if(item != nullptr){
+
+                // Checks if the ingredient is already cooked when you press the second time
+                if(as->isCooked()){
+
+                    // Deactivates the tick() method, restarts the item to uncooked and shows said item.
+                    pressed = false;
+                    burger->addIngredient(item);
+                    as->setNewIngredient();
+                    as->showItem();
+                }
+            }
+        }
+
+        // Otherwise it just adds it to the vector of ingredients
+        else if (ac != nullptr){
             Item* item = ac->getItem();
             if(item != nullptr){
                 burger->addIngredient(item);
@@ -108,6 +146,7 @@ void Player::keyPressed(int key){
         }
     }
 
+    // Moves the chef keeping in mind their respective boundaries.
     if (key == OF_KEY_LEFT){
         facing = "left";
         if(x >= 0){
@@ -129,6 +168,17 @@ void Player::keyPressed(int key){
 BaseCounter* Player::getActiveCounter(){
     for(Entity* e:entityManager->entities){
         BaseCounter* c = dynamic_cast<BaseCounter*>(e);
+        if(x + e->getWidth()/2 >= e->getX() && x +e->getWidth()/2 <e->getX() + e->getWidth()){
+            return c;
+        }
+    }
+    return nullptr;
+}
+
+// Creates a getter for the StoveCounters class
+StoveCounter* Player::getActiveStove(){
+    for(Entity* e:entityManager->entities){
+        StoveCounter* c = dynamic_cast<StoveCounter*>(e);
         if(x + e->getWidth()/2 >= e->getX() && x +e->getWidth()/2 <e->getX() + e->getWidth()){
             return c;
         }

@@ -34,7 +34,4 @@ public:
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);	
 		ofTrueTypeFont& getFont();
-		// Client Client;
-		// int players_left = Client.players_left;
-		// int getPlayer_left(){return players_left};
 };

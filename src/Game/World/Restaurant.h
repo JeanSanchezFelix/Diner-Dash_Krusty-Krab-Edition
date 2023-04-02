@@ -4,6 +4,7 @@
 #pragma once
 
 #include "BaseCounter.h"
+#include "StoveCounter.h"
 #include "EntityManager.h"
 #include "Player.h"
 #include "ofMain.h"
@@ -34,6 +35,7 @@ class Restaurant {
         ofImage blue_orchid;
         ofImage pink_orchid;
         ofImage burger_background;
+        ofImage client_background;
         void initItems();
         void initCounters();
         void initClients();

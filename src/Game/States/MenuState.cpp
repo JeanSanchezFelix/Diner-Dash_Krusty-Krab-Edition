@@ -1,10 +1,9 @@
 #include "MenuState.h"
 
 MenuState::MenuState() {
+	// New image button to start the game
 	startImg.load("images/ImgButton.png");
 	startButton = new Button(ofGetWidth()-320,ofGetHeight()-302, ofGetWidth()/2.5, ofGetHeight()/2.5, startImg);
-	// string text = "Start";
-	// startButton = new Button(ofGetWidth()/2 - text.length()*8, ofGetHeight()/2 - text.length()*11, 64, 50, "Start");
 	menuImage.load("images/MenuBG.jpg");	
 
 }
@@ -24,6 +23,7 @@ void MenuState::render() {
 	menuImage.draw(0,0, ofGetWidth(), ofGetHeight());
 	startButton->render();
 
+	// Instructions for the key presses 
 	ofSetColor(0);
 	ofDrawBitmapString("Use '<-' and '->' to Navigate", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 150);
     ofDrawBitmapString("Press 's' to serve the Burger", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 200);
@@ -33,8 +33,6 @@ void MenuState::render() {
 }
 
 void MenuState::keyPressed(int key){
-
-
 }
 
 void MenuState::mousePressed(int x, int y, int button){

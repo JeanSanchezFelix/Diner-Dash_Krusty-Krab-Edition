@@ -1,5 +1,5 @@
-#pragma once
 #include "ofApp.h"
+
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofSetWindowTitle("Dinner Dash (Krusty Krab edition)");

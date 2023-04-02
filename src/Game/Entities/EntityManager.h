@@ -14,7 +14,6 @@ public:
 	void removeLeavingClients();
 	std::vector<Entity*> entities;
 	int getPL(){return players_left;}
-	// int getPat_client(){return getPatience();}
 private: 
 	int players_left = 0;
 
