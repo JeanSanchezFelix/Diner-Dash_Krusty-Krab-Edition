@@ -23,6 +23,12 @@ void GameState::render() {
 
 void GameState::keyPressed(int key){
 	restaurant->keyPressed(key);
+	switch(key){
+		case 'p':
+			setFinished(true);
+			setNextState("Pause");
+			break;
+	}
 }
 
 void GameState::mousePressed(int x, int y, int button){

@@ -8,6 +8,7 @@ void ofApp::setup(){
     gameState = new GameState(); 
     loseState = new LoseState(); //this is something i need to fix
 	winState = new WinState();
+	pauseState = new PauseState();
 	// Initial State
 	currentState = menuState;
 
@@ -41,7 +42,10 @@ void ofApp::update(){
 				currentState = loseState;
 			}else if(currentState->getNextState() == "Win"){
 				currentState = winState;
+			}else if(currentState->getNextState() == "Pause"){
+				currentState = pauseState;
 			}
+
 			currentState->reset();
 		}
 	}
