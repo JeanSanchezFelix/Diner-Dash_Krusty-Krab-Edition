@@ -66,3 +66,15 @@ int Burger::getPrice(){
 
     return price - ingredients_market_cost;
 }
+bool Burger::equals(Burger* burger){
+
+    for(int i = 0; i<burger.size(; i++){
+        if(!burger[1] == ingredients[1] && burger[burger.size()-1] == ingredients[ingredients.size()-1]){
+            return false;
+        }
+        
+    }
+    if(entitymanager->firstClient->getBurger()==burger){
+        return true;
+    }else{return false;}
+}

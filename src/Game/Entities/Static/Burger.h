@@ -21,7 +21,9 @@ class Burger {
     void render();
     void clear();
     int getPrice();
+    
     void setY(int y) {
         this->y = y;
     }
+    bool equals();
 };
