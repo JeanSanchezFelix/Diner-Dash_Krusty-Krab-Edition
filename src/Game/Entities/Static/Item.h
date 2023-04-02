@@ -8,7 +8,9 @@
 class Item {    
 public:
     Item(ofImage, string);
+    Item(ofImage, ofImage, string);
     ofImage sprite;
+    ofImage rawSprite;
     string name;
     string getName();  
 };

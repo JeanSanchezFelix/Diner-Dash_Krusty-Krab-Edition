@@ -15,7 +15,6 @@ class Client: public Entity{
         int serve(Burger*);
         Client* nextClient=nullptr;
         bool isLeaving = false;
-        // int players_left = 0;
         int getPatience(){return patience;}
 
 

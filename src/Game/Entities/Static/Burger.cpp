@@ -19,10 +19,14 @@ Burger::Burger(int x, int y, int width, int height){
     this->height = height;
 }
 
-void Burger::addIngredient(Item *item) {
-    ingredients.push_back(item);
+// Applies a limit to the amount of ingredients
+void Burger::addIngredient(Item *item) { 
+    if(ingredients.size() <= 12){
+        ingredients.push_back(item);
+    }
 }
 
+// Checks whether there is a ingredient already in the vector, and then removes it.
 void Burger::removeIngredient() {
     if (!ingredients.empty()) {
     ingredients.pop_back();
@@ -46,6 +50,7 @@ int Burger::getPrice(){
     price = 0;
     ingredients_market_cost = 0;
 
+    // Hashmap containing the names of the different ingredients as keys and their price as values
     unordered_map<string, int> pricedItem = {  
         {"topBread", 1},
         {"patty", 4},
@@ -55,8 +60,11 @@ int Burger::getPrice(){
         {"botBread", 1}};
 
 
+        // Iterates over the hashmap and then compares with the vector of the player's added ingredients.
         for (auto item : pricedItem){
             for (unsigned int i = 0; i < ingredients.size(); i++){
+
+                // If it finds a matching ingredient it grabs the value and adds it to the price.
                 if (item.first == ingredients[i]->getName()){
                     price += item.second;
                     ingredients_market_cost++;

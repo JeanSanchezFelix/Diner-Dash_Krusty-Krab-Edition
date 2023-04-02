@@ -3,6 +3,7 @@
 #include "Burger.h"
 #include "EntityManager.h"
 #include "BaseCounter.h"
+#include "StoveCounter.h"
 class Player: public Entity{
 
     private:
@@ -10,6 +11,7 @@ class Player: public Entity{
         string facing = "right";
         int idleTimer = 0;
         bool idle = true;
+        bool pressed = false;
 
         Animation *currentAnim;
         Animation *IdleAnim;
@@ -26,6 +28,7 @@ class Player: public Entity{
         void mousePressed(int, int, int);
         void setFacing(string);
         BaseCounter* getActiveCounter();
+        StoveCounter* getActiveStove();
         Burger* getBurger(){ return burger;
         }
 };
