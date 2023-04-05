@@ -15,7 +15,7 @@ class Client: public Entity{
         int serve(Burger*);
         Client* nextClient=nullptr;
         bool isLeaving = false;
-        getBurger(){return burger;}
+        Burger* getBurger(){return burger;}
         int getPatience(){return patience;}
 
 

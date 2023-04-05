@@ -12,7 +12,7 @@ class Restaurant {
     private:
         Player* player;
         EntityManager* entityManager;
-        int ticks=0;
+        int ticks = 0;
         unordered_map<Item*, int> pricedItem;
         std::vector<ofImage> people;
         int money = 0;
