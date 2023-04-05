@@ -43,7 +43,7 @@ void Burger::render(){
 }
 
 void Burger::clear(){
-    ingredients.empty();
+    ingredients.clear(); // changed from ingredients.empty()
 }
 
 int Burger::getPrice(){
@@ -74,3 +74,71 @@ int Burger::getPrice(){
 
     return price - ingredients_market_cost;
 }
+bool Burger::equals(Burger* paramBurger){ // player burger 
+    vector<Item*> target = this->getIngredients();
+    vector<Item*> param = paramBurger->getIngredients();
+    int tarCheese=0;
+    int tarPatty=0;
+    int tarTomato=0;
+    int tarLettuce=0;
+
+    int parCheese=0;
+    int parPatty=0;
+    int parTomato=0;
+    int parLettuce=0;
+
+
+    if(!(this->getIngredients()[1] == paramBurger->getIngredients()[1] && 
+    this->getIngredients()[this->getIngredients().size()-1] == paramBurger->getIngredients()[paramBurger->getIngredients().size()-1]))
+        return false;
+
+    for(int i = 0; i<target.size(); i++){
+        if(target[i]->getName() == "lettuce"){
+            tarLettuce++;
+        }
+        else if(target[i]->getName() == "patty"){
+            tarPatty++;
+       }
+        else if(target[i]->getName() == "tomato"){
+            tarTomato++;
+       }
+        else if(target[i]->getName() == "cheese"){
+            tarCheese++;
+       }
+
+
+    }
+
+    for(int i = 0; i<param.size(); i++){
+        if(param[i]->getName() == "lettuce"){
+            parLettuce++;
+        }
+        else if(param[i]->getName() == "patty"){
+            parPatty++;
+       }
+        else if(param[i]->getName() == "tomato"){
+            parTomato++;
+       }
+        else if(param[i]->getName() == "cheese"){
+            parCheese++;
+       }
+
+
+    }
+
+    if(!(tarCheese == parCheese)){
+        return false;
+    }
+    if(!(tarPatty == parPatty)){
+        return false;
+    }
+    if(!(tarTomato == parTomato)){
+        return false;
+    }
+    if(!(tarLettuce == parLettuce)){
+        return false;
+    }
+    else{return true;}
+}
+
+// command shift p then reload window

@@ -21,7 +21,7 @@ class Burger {
     void render();
     void clear();
     int getPrice();
-    void setY(int y) {
-        this->y = y;
-    }
+    vector<Item *> getIngredients(){return ingredients;}
+    void setY(int y) {this->y = y;}
+    bool equals(Burger *burger);
 };

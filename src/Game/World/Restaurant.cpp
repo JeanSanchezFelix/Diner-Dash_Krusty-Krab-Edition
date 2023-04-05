@@ -99,7 +99,7 @@ void Restaurant::tick() {
 
 void Restaurant::generateClient(){
     vector<Item*> tempItems {patty, cheese, tomato, lettuce};
-    Burger* b = new Burger(72, 100, 50, 25);
+    Burger* b = new Burger(72, 100, 50, 25); // client"s burger?
 
     b->addIngredient(botBread);
     for (int i = 0; i < ofRandom(3); i++){
@@ -107,7 +107,7 @@ void Restaurant::generateClient(){
     }
     b->addIngredient(topBread);
 
-    entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b));
+    entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b)); // somehow get b into equals method
 }
 void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());
@@ -131,6 +131,9 @@ void Restaurant::serveClient(){
 void Restaurant::keyPressed(int key) {
     player->keyPressed(key);
     if(key == 's'){
-        serveClient();
+        if(entityManager->firstClient->getBurger()->equals(player->getBurger())){
+            serveClient();
+            player->getBurger()->clear();
+    }  
     }
 }
