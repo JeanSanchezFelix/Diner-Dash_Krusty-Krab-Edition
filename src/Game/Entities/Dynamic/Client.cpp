@@ -28,6 +28,12 @@ void Client::tick(){
 }
 
 int Client::serve(Burger* burger){
-    isLeaving = true;
-    return burger->getPrice();
+    if(nextClient==nullptr){
+        return -1;
+    }
+    if(this->getBurger()->equals(burger)){
+        isLeaving = true;
+        return burger->getPrice();
+    }
+    return nextClient->serve(burger);
 }

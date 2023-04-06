@@ -1,6 +1,8 @@
 #include "Entity.h"
 #include "Burger.h"
 
+
+
 class Client: public Entity{
     private:
         Burger* burger;
@@ -15,7 +17,6 @@ class Client: public Entity{
         int serve(Burger*);
         Client* nextClient=nullptr;
         bool isLeaving = false;
-        // int players_left = 0;
         Burger* getBurger(){return burger;}
         int getPatience(){return patience;}
 

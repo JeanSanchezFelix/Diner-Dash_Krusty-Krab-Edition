@@ -138,9 +138,7 @@ void Restaurant::serveClient(){
 void Restaurant::keyPressed(int key) {
     player->keyPressed(key);
     if(key == 's'){
-        if(entityManager->firstClient->getBurger()->equals(player->getBurger())){
             serveClient();
             player->getBurger()->clear();
-    }  
     }
 }
