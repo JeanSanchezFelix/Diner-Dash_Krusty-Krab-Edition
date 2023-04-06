@@ -81,7 +81,8 @@ void Player::tick(){
 
                 // "Cooks the item" and then shows the cooked item
                 as->tick();
-                as->showItem();   
+                as->showItem();
+
             }   
         }
     }

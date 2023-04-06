@@ -15,6 +15,7 @@ class StoveCounter: public BaseCounter {
         void tick();
         bool isCooked();
         void setNewIngredient();
+        int getStoveTimer();
 
 };
 

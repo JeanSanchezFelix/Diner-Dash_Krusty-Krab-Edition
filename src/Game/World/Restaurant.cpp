@@ -14,6 +14,8 @@ Restaurant::Restaurant() {
     blue_orchid.load("images/Orchid.png");
     pink_orchid.load("images/pink_orchid.png");
     client_background.load("images/client_background.png");
+    money_background.load("images/money_background.png");
+    krustyFont = new GameFont(loadingFont, "Krabby Patty.ttf", 12);	
     entityManager = new EntityManager();
     ofImage chefPlayerImage;
     chefPlayerImage.load("images/SpongeBob_Sprite_Sheet.png");
@@ -58,13 +60,14 @@ void Restaurant::initCounters(){
     breadCounterImg.cropFrom(counterSheet,0,63,34,56);//buns
     entityManager->addEntity(new BaseCounter(0,yOffset-16, counterWidth, 117, nullptr, plateCounterImg));
     entityManager->addEntity( new BaseCounter(counterWidth,yOffset-7, counterWidth,108, cheese, cheeseCounterImg));
-    entityManager->addEntity(new StoveCounter(counterWidth*2,yOffset, counterWidth, 102, patty, stoveCounterImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*3, yOffset, counterWidth, 102, lettuce, lettuceCounterImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*4,yOffset, counterWidth, 102, nullptr, emptyCounterImg));
+    entityManager->addEntity(new StoveCounter(counterWidth*2,yOffset-1, counterWidth, 102, patty, stoveCounterImg));
+    entityManager->addEntity(new BaseCounter(counterWidth*3, yOffset-1, counterWidth, 102, lettuce, lettuceCounterImg));
+    entityManager->addEntity(new BaseCounter(counterWidth*4,yOffset-1, counterWidth, 102, nullptr, emptyCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*5, yOffset -10, counterWidth, 113, tomato, tomatoCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*6, yOffset-32, counterWidth, 133, botBread, breadCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*7, yOffset-32, counterWidth, 133, topBread, breadCounterImg));
 
+    entityManager->addEntity(new BaseCounter(counterWidth*8,yOffset-1, counterWidth, 102, nullptr, emptyCounterImg));
 }
 void Restaurant::initClients(){
     ofImage temp;
@@ -117,11 +120,14 @@ void Restaurant::render() {
     pink_orchid.draw(ofGetWidth()-642, ofGetHeight()-588, 100 , 100);
     client_background.draw(ofGetWidth()-150, ofGetHeight()-756.5, 135, 200);
     client_background.draw(-27.5, -1, 160, 455);
+    money_background.draw(ofGetWidth()/2 - 63, 2.5, 125,30);
     player->render();
     entityManager->render();
     ofSetColor(0, 100, 0);
-    ofDrawBitmapString("Money: " + to_string(money), ofGetWidth()/2, 10);
+	krustyFont->render("Money: " + to_string(money), ofGetWidth()/2 - 36, 23.5);
     ofSetColor(256, 256, 256);
+
+
 }
 void Restaurant::serveClient(){
     if(entityManager->firstClient!= nullptr){

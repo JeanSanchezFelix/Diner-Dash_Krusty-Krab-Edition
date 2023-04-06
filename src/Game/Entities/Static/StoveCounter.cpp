@@ -38,3 +38,6 @@ void StoveCounter::setNewIngredient(){
     cooked = false;
 }
 
+int StoveCounter::getStoveTimer(){
+    return stoveTimer;
+}
