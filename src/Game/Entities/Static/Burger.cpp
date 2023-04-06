@@ -87,8 +87,8 @@ bool Burger::equals(Burger* paramBurger){ // player burger
     int parTomato=0;
     int parLettuce=0;
 
-
-    if(!(this->getIngredients()[1] == paramBurger->getIngredients()[1] && 
+    
+    if(!(this->getIngredients()[0] == paramBurger->getIngredients()[0] && 
     this->getIngredients()[this->getIngredients().size()-1] == paramBurger->getIngredients()[paramBurger->getIngredients().size()-1]))
         return false;
 
