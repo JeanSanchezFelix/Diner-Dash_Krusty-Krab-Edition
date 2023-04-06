@@ -31,4 +31,5 @@ class Player: public Entity{
         StoveCounter* getActiveStove();
         Burger* getBurger(){ return burger;
         }
+        bool isPressed();
 };

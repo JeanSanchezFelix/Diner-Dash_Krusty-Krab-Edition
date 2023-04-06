@@ -63,7 +63,8 @@ Player::Player(int x, int y, int width, int height, ofImage sprite, EntityManage
 void Player::tick(){
 
     currentAnim->tick();
-
+    ofSetColor(256, 256, 256);
+    
     // Checks if the player is moving to change the current animation respectively
     if (!idle) {
             currentAnim = MovingAnim;
@@ -78,12 +79,12 @@ void Player::tick(){
         if (as != nullptr){
             Item* item = as->getItem();
             if (item != nullptr){
-
-                // "Cooks the item" and then shows the cooked item
-                as->tick();
-                as->showItem();
-
-            }   
+                if(!as->isCooked()){
+                    // "Cooks the item" and then shows the cooked item
+                    as->tick();
+                    as->showItem();
+                }  
+            }  
         }
     }
 }
@@ -163,9 +164,8 @@ void Player::keyPressed(int key){
             idle = false; 
         }
     }
-
-
 }
+
 BaseCounter* Player::getActiveCounter(){
     for(Entity* e:entityManager->entities){
         BaseCounter* c = dynamic_cast<BaseCounter*>(e);
@@ -193,7 +193,10 @@ void Player::keyReleased(int key) {
         currentAnim = IdleAnim;
     }
 }
+
 void Player::mousePressed(int x, int y, int button) {
 }
 
 void Player::setFacing(string facing){ this->facing = facing; }
+
+bool Player::isPressed(){return pressed; }

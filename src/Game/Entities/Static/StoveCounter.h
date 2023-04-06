@@ -6,7 +6,8 @@
 class StoveCounter: public BaseCounter {
     private:
         Item *item;
-        int stoveTimer = 200;
+        int stoveTimer = 95;
+        int clock = 0;
         bool cooked = false;
   
     public:
@@ -16,6 +17,7 @@ class StoveCounter: public BaseCounter {
         bool isCooked();
         void setNewIngredient();
         int getStoveTimer();
+        int getClock();
 
 };
 

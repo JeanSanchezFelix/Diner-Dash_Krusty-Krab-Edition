@@ -121,8 +121,9 @@ void Restaurant::render() {
     client_background.draw(ofGetWidth()-150, ofGetHeight()-756.5, 135, 200);
     client_background.draw(-27.5, -1, 160, 455);
     money_background.draw(ofGetWidth()/2 - 63, 2.5, 125,30);
-    player->render();
     entityManager->render();
+    player->render();
+    
     ofSetColor(0, 100, 0);
 	krustyFont->render("Money: " + to_string(money), ofGetWidth()/2 - 36, 23.5);
     ofSetColor(256, 256, 256);
