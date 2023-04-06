@@ -7,16 +7,20 @@
 #include "StoveCounter.h"
 #include "EntityManager.h"
 #include "Player.h"
+#include "GameFont.h" 
 #include "ofMain.h"
 
 class Restaurant {
     private:
         Player* player;
         EntityManager* entityManager;
+        ofTrueTypeFont loadingFont;
+        GameFont *krustyFont;
         int ticks = 0;
         unordered_map<Item*, int> pricedItem;
         std::vector<ofImage> people;
         int money = 0;
+
         
     public:
         Restaurant();
@@ -35,6 +39,7 @@ class Restaurant {
         ofImage pink_orchid;
         ofImage burger_background;
         ofImage client_background;
+        ofImage money_background;
         void initItems();
         void initCounters();
         void initClients();
@@ -47,4 +52,5 @@ class Restaurant {
         int restaurant_getPL(){
             return entityManager->getPL();
         }
+        
 };

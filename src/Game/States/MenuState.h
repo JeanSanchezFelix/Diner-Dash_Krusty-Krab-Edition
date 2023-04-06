@@ -3,17 +3,16 @@
 #include "State.h"
 #include "Button.h"
 
+
 class MenuState : public State {
 private:
 	ofImage menuImage;
 	ofImage startImg;
-	Button *startButton;
-	ofTrueTypeFont font;
+	Button *startButton; 
 
 
 public:
 	MenuState();
-	MenuState(ofTrueTypeFont* font);
 	void tick();
 	void render();
 	void keyPressed(int key);

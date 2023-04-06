@@ -12,8 +12,6 @@ void ofApp::setup(){
 	// Initial State
 	currentState = menuState;
 
-	// Load font
-	font.load("Krabby Patty.ttf", 56);
 	
 	// Sound
 	sound.load("Spongebob_Goo_Lagoon.wav");
@@ -125,6 +123,3 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 		currentState->dragEvent(dragInfo);
 }
 
-ofTrueTypeFont& ofApp::getFont() {
-    return font;
-}

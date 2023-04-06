@@ -15,7 +15,6 @@ private:
 	LoseState *loseState;
 	WinState *winState;
 	PauseState *pauseState;
-	ofTrueTypeFont font; 
 	ofSoundPlayer sound;
 
 
@@ -35,5 +34,5 @@ public:
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);	
-		ofTrueTypeFont& getFont();
+
 };
