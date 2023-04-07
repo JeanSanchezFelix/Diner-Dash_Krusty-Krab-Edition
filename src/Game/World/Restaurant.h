@@ -48,6 +48,7 @@ class Restaurant {
         void tick();
         void render();
         void keyPressed(int key);
+        void keyReleased(int key);
         int getMoney(){return money;}
         int restaurant_getPL(){
             return entityManager->getPL();

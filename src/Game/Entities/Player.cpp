@@ -162,8 +162,10 @@ void Player::keyPressed(int key){
         if(x + width <= ofGetWidth()){
             x+=speed;
             idle = false; 
+            
         }
     }
+
 }
 
 BaseCounter* Player::getActiveCounter(){
@@ -190,7 +192,6 @@ StoveCounter* Player::getActiveStove(){
 void Player::keyReleased(int key) {
     if (key == OF_KEY_RIGHT || key == OF_KEY_LEFT) {
         idle = true;
-        currentAnim = IdleAnim;
     }
 }
 

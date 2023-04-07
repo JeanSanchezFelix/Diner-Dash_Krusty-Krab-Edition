@@ -87,6 +87,8 @@ void Restaurant::initClients(){
     people.push_back(temp);
     temp.load("images/People/Fish People/p_Tina.png");
     people.push_back(temp);
+    temp.load("images/People/Fish People/p_Nate.png");
+    people.push_back(temp);
     
     // temp.load("images/People/Fish People/p_BubleBass.png");
     // people.push_back(temp);
@@ -143,4 +145,9 @@ void Restaurant::keyPressed(int key) {
             serveClient();
             player->getBurger()->clear();
     }
+}
+
+void Restaurant::keyReleased(int key) {
+    player->keyReleased(key);
+
 }

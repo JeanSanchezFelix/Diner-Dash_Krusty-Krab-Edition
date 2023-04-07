@@ -35,6 +35,7 @@ void GameState::mousePressed(int x, int y, int button){
 }
 
 void GameState::keyReleased(int key){
+	restaurant->keyReleased(key);
 }
 
 void GameState::reset(){
