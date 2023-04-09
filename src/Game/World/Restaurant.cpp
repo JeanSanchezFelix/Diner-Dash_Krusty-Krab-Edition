@@ -71,23 +71,25 @@ void Restaurant::initCounters(){
 }
 void Restaurant::initClients(){
     ofImage temp;
-    temp.load("images/People/Car_Designer3Female.png");
+    temp.load("images/People/Fish People/p_Pickels.png");
     people.push_back(temp);
-    temp.load("images/People/Freedom_Fighter2Male.png");
+    temp.load("images/People/Fish People/p_Ward.png");
     people.push_back(temp);
-    temp.load("images/People/Hipster.png");
+    temp.load("images/People/Fish People/p_Shubie.png");
     people.push_back(temp);
-    temp.load("images/People/Lawyer2Male.png");
+    temp.load("images/People/Fish People/p_Chocolate.png");
     people.push_back(temp);
-    temp.load("images/People/Mad_Scientist3Female.png");
+    temp.load("images/People/Fish People/p_Billy.png");
     people.push_back(temp);
-    temp.load("images/People/Programmer2Male.png");
+    temp.load("images/People/Fish People/p_Old_Man_Jenkins.png");
     people.push_back(temp);
-    temp.load("images/People/Songwriter3Male.png");
+    temp.load("images/People/Fish People/p_Fred.png");
     people.push_back(temp);
-    temp.load("images/People/Weather_Reporter2Female.png");
+    temp.load("images/People/Fish People/p_Tina.png");
     people.push_back(temp);
     
+    // temp.load("images/People/Fish People/p_BubleBass.png");
+    // people.push_back(temp);
 }
 void Restaurant::tick() {
     ticks++;
@@ -110,7 +112,7 @@ void Restaurant::generateClient(){
     }
     b->addIngredient(topBread);
 
-    entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b)); // somehow get b into equals method
+    entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(people.size())], b)); // somehow get b into equals method
 }
 void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());
@@ -120,7 +122,7 @@ void Restaurant::render() {
     pink_orchid.draw(ofGetWidth()-642, ofGetHeight()-588, 100 , 100);
     client_background.draw(ofGetWidth()-150, ofGetHeight()-756.5, 135, 200);
     client_background.draw(-27.5, -1, 160, 455);
-    money_background.draw(ofGetWidth()/2 - 63, 2.5, 125,30);
+    money_background.draw(ofGetWidth()/2 - 63, 2.5, 125,30); 
     entityManager->render();
     player->render();
     

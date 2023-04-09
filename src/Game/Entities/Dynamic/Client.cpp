@@ -28,6 +28,9 @@ void Client::tick(){
 }
 
 int Client::serve(Burger* burger){
+    if(burger->getIngredients().size()==0){
+        return 0;
+    }
     if(nextClient==nullptr){
         return -1;
     }
