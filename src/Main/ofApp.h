@@ -6,6 +6,7 @@
 #include "LoseState.h"
 #include "WinState.h"
 #include "PauseState.h"
+#include "PreviewState.h"
 class ofApp : public ofBaseApp{
 
 private:
@@ -15,7 +16,9 @@ private:
 	LoseState *loseState;
 	WinState *winState;
 	PauseState *pauseState;
+	PreviewState *previewState;
 	ofSoundPlayer sound;
+	ofSoundPlayer SecondSound;
 
 
 public:

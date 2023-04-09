@@ -29,7 +29,7 @@ Player::Player(int x, int y, int width, int height, ofImage sprite, EntityManage
     temp.cropFrom(sprite, 367,114,28,38);
     BobMovingAnim.push_back(temp);
 
-    MovingAnim = new Animation(5, BobMovingAnim);
+    MovingAnim = new Animation(3, BobMovingAnim);
 
     // New sprite for the idle animation
     vector<ofImage> BobIdleAnim;

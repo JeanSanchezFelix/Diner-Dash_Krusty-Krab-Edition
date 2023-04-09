@@ -13,7 +13,7 @@ MenuState::MenuState() {
 void MenuState::tick() {	
 	startButton->tick();
 	if(startButton->wasPressed()){
-		setNextState("Game");
+		setNextState("Preview");
 		setFinished(true);
 
 	}

@@ -1,5 +1,4 @@
 #include "GameState.h"
-// #include "Client.h"
 
 GameState::GameState() {
     this->restaurant = new Restaurant();
@@ -9,7 +8,7 @@ void GameState::tick() {
 	if(restaurant->restaurant_getPL()>=10){
 		setFinished(true);
 		setNextState("Lose");
-		// currentState = loseState;
+
 	}
 	if(restaurant->getMoney()>=100){
 		setFinished(true);

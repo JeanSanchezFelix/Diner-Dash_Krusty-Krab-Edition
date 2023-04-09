@@ -9,6 +9,8 @@ void ofApp::setup(){
     loseState = new LoseState(); //this is something i need to fix
 	winState = new WinState();
 	pauseState = new PauseState();
+	previewState = new PreviewState();
+	
 	// Initial State
 	currentState = menuState;
 
@@ -26,11 +28,15 @@ void ofApp::update(){
 		currentState->tick();
 		if(currentState->hasFinished()){
 			if(currentState->getNextState() == "Menu"){
+				SecondSound.load("Spongebob_Bubbles_Sound.wav");
+				SecondSound.play();
 				currentState = menuState;
 				sound.load("Spongebob_Goo_Lagoon.wav");
 				sound.setLoop(true);
 				sound.play();
 			}else if(currentState->getNextState() == "Game"){
+				SecondSound.load("Spongebob_Bubbles_Sound.wav");
+				SecondSound.play();
 				currentState = gameState;
 				sound.load("Spongebob_Jellyfish_Fields.wav");
 				sound.setLoop(true);
@@ -38,10 +44,30 @@ void ofApp::update(){
 			
 			}else if(currentState->getNextState() == "Lose"){
 				currentState = loseState;
+				sound.load("Spongebob_Steel_Sting.wav");
+				sound.setLoop(false);
+				sound.play();
 			}else if(currentState->getNextState() == "Win"){
 				currentState = winState;
+				sound.load("Ocean_Man_Spongebob.wav");
+				sound.setLoop(true);
+				sound.play();
+
 			}else if(currentState->getNextState() == "Pause"){
+				SecondSound.load("Retro_Pause_Sound.wav");
+				SecondSound.setLoop(false);
+				SecondSound.play();
 				currentState = pauseState;
+				sound.load("Spongebob_Puka_A.wav");
+				sound.setLoop(true);
+				sound.play();
+			}else if(currentState->getNextState() == "Preview"){
+				SecondSound.load("Spongebob_Bubbles_Sound.wav");
+				SecondSound.play();
+				currentState = previewState;
+				sound.load("Spongebob_Tip_Top_Polka.wav");
+				sound.setLoop(true);
+				sound.play();
 			}
 
 			currentState->reset();

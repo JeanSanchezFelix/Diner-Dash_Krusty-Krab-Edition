@@ -1,17 +1,19 @@
 #include "LoseState.h"
 
 LoseState::LoseState() {
-//     gamestate = new GameState();
+    game_over_screen.load("images/game_over_screen.jpg");
+
 }
 void LoseState::tick() {
-    // gamestate->tick();
+
 }
 void LoseState::render() {
-    // gamestate->render();
+    game_over_screen.draw(0,0,ofGetWidth(), ofGetHeight());
+
 }
 
 void LoseState::keyPressed(int key){
-    // gamestate->keyPressed(key);
+
 }
 
 void LoseState::mousePressed(int x, int y, int button){

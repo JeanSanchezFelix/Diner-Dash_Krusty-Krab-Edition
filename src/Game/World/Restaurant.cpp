@@ -90,7 +90,7 @@ void Restaurant::initClients(){
     temp.load("images/People/Fish People/p_Nate.png");
     people.push_back(temp);
     
-    // temp.load("images/People/Fish People/p_BubleBass.png");
+    // temp.load("images/People/Fish People/p_BubbleBass.png");
     // people.push_back(temp);
 }
 void Restaurant::tick() {
@@ -136,7 +136,8 @@ void Restaurant::render() {
 }
 void Restaurant::serveClient(){
     if(entityManager->firstClient!= nullptr){
-        money += entityManager->firstClient->serve(player->getBurger());
+        // money += entityManager->firstClient->serve(player->getBurger());
+        money += 100;
     }
 }
 void Restaurant::keyPressed(int key) {

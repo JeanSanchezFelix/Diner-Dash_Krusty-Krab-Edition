@@ -3,6 +3,11 @@
 
 
 class WinState: public State{
+
+    private:
+        ofImage win_screen;
+
+
     public: 
         WinState();
         void reset();

@@ -1,18 +1,18 @@
 #include "WinState.h"
 
 WinState::WinState(){
-//     gamestate = new GameState();
+        win_screen.load("images/win_screen.png");
 }
 void WinState::tick() {
-    // gamestate->tick();
 }
 void WinState::render() {
+        
+    win_screen.draw(0,0,ofGetWidth(), ofGetHeight());
 
-    // gamestate->render();
 }
 
 void WinState::keyPressed(int key){
-    // gamestate->keyPressed(key);
+
 }
 
 void WinState::mousePressed(int x, int y, int button){

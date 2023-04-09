@@ -3,6 +3,10 @@
 
 
 class LoseState: public State{
+
+    private:
+        ofImage game_over_screen;
+
     public: 
         LoseState();
         void reset();

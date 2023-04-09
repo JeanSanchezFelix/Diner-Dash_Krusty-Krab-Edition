@@ -3,6 +3,14 @@
 
 
 class PauseState: public State{
+
+    private:
+        ofImage pause_screen;
+        ofImage Bubble_Bass;
+        GameFont *krustyFont_H;
+        GameFont *krustyFont;
+        ofTrueTypeFont loadingFont;
+
     public: 
         PauseState();
         void reset();
