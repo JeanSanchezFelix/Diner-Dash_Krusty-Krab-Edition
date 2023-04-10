@@ -20,6 +20,7 @@ void EntityManager::removeLeavingClients(){
         if(tempClient->isLeaving){
             if(tempClient->getPatience()== 0){
                 players_left++;
+                // players_left = 10;
                 if(isInspec){
                     setInspecStatus(true);
                 }

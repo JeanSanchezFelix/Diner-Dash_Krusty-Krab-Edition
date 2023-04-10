@@ -21,7 +21,7 @@ void MenuState::tick() {
 void MenuState::render() {
 	ofSetColor(256, 256, 256);
 	menuImage.draw(0,0, ofGetWidth(), ofGetHeight());
-	startButton->render();
+	startButton->render(ofGetWidth()-320,ofGetHeight()-302, ofGetWidth()/2.5, ofGetHeight()/2.5);
 
 	// Instructions for the key presses 
 	ofSetColor(0);

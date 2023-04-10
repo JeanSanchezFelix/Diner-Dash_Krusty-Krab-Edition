@@ -42,12 +42,12 @@ void Button::mousePressed(int x, int y){
     }
 }
 
-void Button::render(){
+void Button::render(int xPos, int yPos, int width, int height){
     ofSetColor(0);
     ofDrawBitmapString(buttonText, xPos+width/2, yPos+height/2);
 
     ofSetColor(256, 256, 256);
-	buttonImage.draw(ofGetWidth()-320,ofGetHeight()-302, ofGetWidth()/2.5, ofGetHeight()/2.5);
+    buttonImage.draw(xPos, yPos, width, height);
 }
 
 bool Button::wasPressed(){
