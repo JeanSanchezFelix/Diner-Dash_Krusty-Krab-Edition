@@ -146,8 +146,8 @@ void Restaurant::render() {
 }
 void Restaurant::serveClient(){
     if(entityManager->firstClient!= nullptr){
-        // money += entityManager->firstClient->serve(player->getBurger());
-        money += 100;
+        money += entityManager->firstClient->serve(player->getBurger());
+        // money += 100;
     }
 }
 void Restaurant::keyPressed(int key){
