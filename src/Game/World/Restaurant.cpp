@@ -87,12 +87,10 @@ void Restaurant::initClients(){
     people.push_back(temp);
     temp.load("images/People/Fish People/p_Tina.png");
     people.push_back(temp);
-    temp.load("images/People/Fish People/p_BubleBass.png");
-    people.push_back(temp);
-
     temp.load("images/People/Fish People/p_Nate.png");
     people.push_back(temp);
-}
+    temp.load("images/People/Fish People/p_BubleBass.png");
+    people.push_back(temp);
 void Restaurant::tick() {
     ticks++;
     if(ticks % 400 == 0){
@@ -115,10 +113,10 @@ void Restaurant::generateClient(){
     b->addIngredient(topBread);
     ClientRandomizer = ofRandom(people.size());
     if(ClientRandomizer!=3){
-         entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(8)], b)); 
+         entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(9)], b)); 
     }
     else{ 
-        Client* Inspec = new Inspector(0, 50, 64, 72, people[8], b);
+        Client* Inspec = new Inspector(0, 50, 64, 72, people[9], b);
         entityManager->addClient(Inspec);
         
     }
