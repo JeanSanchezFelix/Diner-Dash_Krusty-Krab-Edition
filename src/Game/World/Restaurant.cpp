@@ -89,8 +89,9 @@ void Restaurant::initClients(){
     people.push_back(temp);
     temp.load("images/People/Fish People/p_Nate.png");
     people.push_back(temp);
-    temp.load("images/People/Fish People/p_BubleBass.png");
+    temp.load("images/People/Fish People/p_BubbleBass.png");
     people.push_back(temp);
+}
 void Restaurant::tick() {
     ticks++;
     if(ticks % 400 == 0){
