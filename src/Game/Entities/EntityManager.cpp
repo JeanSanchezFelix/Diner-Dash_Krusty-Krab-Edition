@@ -15,11 +15,14 @@ void EntityManager::removeLeavingClients(){
     // Remove all clients that are leaving
     Client* tempClient = firstClient;
     Client* prevClient = nullptr;
-    
+    Inspector* isInspec = dynamic_cast<Inspector*>(tempClient);
     while(tempClient != nullptr){
         if(tempClient->isLeaving){
             if(tempClient->getPatience()== 0){
                 players_left++;
+                if(isInspec){
+                    setInspecStatus(true);
+                }
             }
             if(prevClient == nullptr){
                 firstClient = tempClient->nextClient;
