@@ -91,7 +91,9 @@ void Restaurant::initClients(){
     people.push_back(temp);
     temp.load("images/People/Fish People/p_BubbleBass.png");
     people.push_back(temp);
-}
+    temp.load("images/People/Fish People/p_Plankton.png"); //10
+    people.push_back(temp);
+}   
 void Restaurant::tick() {
     ticks++;
     if(ticks % 400 == 0){
@@ -113,13 +115,17 @@ void Restaurant::generateClient(){
     }
     b->addIngredient(topBread);
     ClientRandomizer = ofRandom(people.size());
-    if(ClientRandomizer!=3){
+    if(ClientRandomizer!=3 && ClientRandomizer !=6){
          entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(9)], b)); 
     }
-    else{ 
+    else if(ClientRandomizer == 3){ 
         Client* Inspec = new Inspector(0, 50, 64, 72, people[9], b);
         entityManager->addClient(Inspec);
         
+    }
+    else if(ClientRandomizer == 6){
+        Client* Plank = new Plankton(0, 50, 64, 72, people[10], b);
+        entityManager->addClient(Plank);
     }
     
 }
@@ -142,10 +148,18 @@ void Restaurant::render() {
         money = money / 2;
         entityManager->setInspecStatus(false);
     }
+    if(getPlankStatus()){
+        entityManager->setPL(10);
+        setPlankStatus(false);
+    }
 
 
 }
 void Restaurant::serveClient(){
+    Plankton* isPlank = dynamic_cast<Plankton*>(entityManager->firstClient);
+    if(isPlank){
+        setPlankStatus(true);
+    }
     if(entityManager->firstClient!= nullptr){
         money += entityManager->firstClient->serve(player->getBurger());
         // money += 100;

@@ -11,6 +11,7 @@
 #include "ofMain.h"
 #include "Inspector.h"
 #include "Client.h"
+#include "Plankton.h"
 
 class Restaurant {
     private:
@@ -24,6 +25,7 @@ class Restaurant {
         std::vector<ofImage> people;
         int money = 0;
         int ClientRandomizer=0;
+        bool plankServed = false;
 
         
     public:
@@ -57,5 +59,9 @@ class Restaurant {
         int restaurant_getPL(){
             return entityManager->getPL();
         }
+        bool setPlankStatus(bool status){
+		    return plankServed = status;
+	    }
+	    bool getPlankStatus(){return plankServed;}
         
 };
