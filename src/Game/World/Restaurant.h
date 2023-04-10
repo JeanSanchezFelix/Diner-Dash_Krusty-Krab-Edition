@@ -9,9 +9,12 @@
 #include "Player.h"
 #include "GameFont.h" 
 #include "ofMain.h"
+#include "Inspector.h"
+#include "Client.h"
 
 class Restaurant {
     private:
+        
         Player* player;
         EntityManager* entityManager;
         ofTrueTypeFont loadingFont;
@@ -20,6 +23,7 @@ class Restaurant {
         unordered_map<Item*, int> pricedItem;
         std::vector<ofImage> people;
         int money = 0;
+        int ClientRandomizer=0;
 
         
     public:

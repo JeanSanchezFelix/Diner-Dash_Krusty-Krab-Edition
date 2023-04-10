@@ -87,9 +87,8 @@ void Restaurant::initClients(){
     people.push_back(temp);
     temp.load("images/People/Fish People/p_Tina.png");
     people.push_back(temp);
-    
-    // temp.load("images/People/Fish People/p_BubleBass.png");
-    // people.push_back(temp);
+    temp.load("images/People/Fish People/p_BubleBass.png");
+    people.push_back(temp);
 }
 void Restaurant::tick() {
     ticks++;
@@ -111,8 +110,16 @@ void Restaurant::generateClient(){
         b->addIngredient(tempItems[ofRandom(tempItems.size())]);
     }
     b->addIngredient(topBread);
-
-    entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(people.size())], b)); // somehow get b into equals method
+    ClientRandomizer = ofRandom(people.size());
+    if(ClientRandomizer!=3){
+         entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(8)], b)); 
+    }
+    else{ 
+        Client* Inspec = new Inspector(0, 50, 64, 72, people[8], b);
+        entityManager->addClient(Inspec);
+        
+    }
+    
 }
 void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());
@@ -129,6 +136,10 @@ void Restaurant::render() {
     ofSetColor(0, 100, 0);
 	krustyFont->render("Money: " + to_string(money), ofGetWidth()/2 - 36, 23.5);
     ofSetColor(256, 256, 256);
+    if(entityManager->getInspecStatus()){
+        money = money / 2;
+        entityManager->setInspecStatus(false);
+    }
 
 
 }
@@ -137,7 +148,7 @@ void Restaurant::serveClient(){
         money += entityManager->firstClient->serve(player->getBurger());
     }
 }
-void Restaurant::keyPressed(int key) {
+void Restaurant::keyPressed(int key){
     player->keyPressed(key);
     if(key == 's'){
             serveClient();
