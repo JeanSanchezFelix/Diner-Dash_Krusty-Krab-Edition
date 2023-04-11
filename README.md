@@ -20,4 +20,13 @@ Please fill out the information below for each member of the team:
 
 # Decorations
 
-### Added two orchids, added cockroach in the middle, changed floor to krusty krab, background for the burger
+- Added two orchids, added a cockroach in the middle, changed floor to Krusty Krab, burger background, also customers, burger and money indicator now have a background, the patty has a cooked sprite.
+
+- Added new preview screens and pause states, containing game instructions and buttons to change states when clicked, the states also have a custom font.
+
+- Change the sprites of the customers and the chef.
+
+- Added new music and sound effects.
+
+
+
