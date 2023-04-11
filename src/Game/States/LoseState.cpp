@@ -12,6 +12,7 @@ void LoseState::tick() {
     restartButton->tick();
     quitButton->tick();
     if(restartButton->wasPressed()){
+        game->reset();
         setNextState("Game");
 		setFinished(true);
     }

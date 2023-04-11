@@ -42,7 +42,7 @@ void GameState::reset(){
 	setNextState("");
 	restaurant->setMoney(0);
 	restaurant->restSetPL(0);
-	restaurant->getPeople().clear();
-	// restaurant.Restaurant();
+	restaurant->getAllLeavingClients(false);
+	restaurant->restartBurger();
 
 }
