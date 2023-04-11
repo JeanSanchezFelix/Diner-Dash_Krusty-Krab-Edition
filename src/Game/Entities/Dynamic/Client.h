@@ -15,7 +15,7 @@ class Client: public Entity{
         virtual ~Client();
         void tick();
         void render();
-        int serve(Burger*);
+        virtual int serve(Burger*);
         Client* nextClient=nullptr;
         bool isLeaving = false;
         Burger* getBurger(){return burger;}

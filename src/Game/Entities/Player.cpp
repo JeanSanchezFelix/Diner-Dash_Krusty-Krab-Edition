@@ -125,6 +125,7 @@ void Player::keyPressed(int key){
                     burger->addIngredient(item);
                     as->setNewIngredient();
                     as->showItem();
+
                 }
             }
         }
@@ -201,3 +202,5 @@ void Player::mousePressed(int x, int y, int button) {
 void Player::setFacing(string facing){ this->facing = facing; }
 
 bool Player::isPressed(){return pressed; }
+
+void Player::setUnpressed() {pressed = false; }

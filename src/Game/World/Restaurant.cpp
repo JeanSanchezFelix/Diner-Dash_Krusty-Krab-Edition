@@ -169,6 +169,7 @@ void Restaurant::keyPressed(int key){
     if(key == 's'){
             serveClient();
             player->getBurger()->clear();
+            player->setUnpressed();
     }
 }
 
@@ -181,3 +182,8 @@ void Restaurant::keyReleased(int key) {
 void Restaurant::restartBurger(){
      player->getBurger()->clear();
 }
+
+bool Restaurant::getPlankServed(){
+    plankton->getPlankServed();
+
+}   

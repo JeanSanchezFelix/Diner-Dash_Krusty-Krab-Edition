@@ -27,6 +27,7 @@ class Restaurant {
         int ClientRandomizer=0;
         bool plankServed = false;
         Burger* b;
+        Plankton* plankton;
 
         
     public:
@@ -57,6 +58,8 @@ class Restaurant {
         void keyPressed(int key);
         void keyReleased(int key);
         void restartBurger();
+        bool getPlankServed();
+        
 
 
 

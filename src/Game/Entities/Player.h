@@ -32,4 +32,5 @@ class Player: public Entity{
         Burger* getBurger(){ return burger;
         }
         bool isPressed();
+        void setUnpressed();
 };
