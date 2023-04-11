@@ -44,6 +44,18 @@ void PreviewState::render() {
     krustyFont->render("need give him his order", 235, 550 + 30);
     krustyFont->render("before he goes, or he'll", 235, 550 + 30*2);
     krustyFont->render("take half of your money", 235, 550 + 30*3);
+
+
+
+
+
+
+
+
+
+
+
+    
     playButton->render(ofGetWidth()-380, ofGetHeight()-550,ofGetWidth()/5, ofGetHeight()/7);
     quitButton->render(ofGetWidth()-200,ofGetHeight()-550, ofGetWidth()/5, ofGetHeight()/7);
     // krustyFont_H->render("Plankton", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 250);
