@@ -40,3 +40,4 @@ int Client::serve(Burger* burger){
     }
     return nextClient->serve(burger);
 }
+

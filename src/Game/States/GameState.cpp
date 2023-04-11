@@ -5,6 +5,7 @@ GameState::GameState() {
 }
 void GameState::tick() {
 	restaurant->tick();
+
 	if(restaurant->restaurant_getPL()>=10){
 		setFinished(true);
 		setNextState("Lose");
@@ -13,6 +14,12 @@ void GameState::tick() {
 	if(restaurant->getMoney()>=100){
 		setFinished(true);
 		setNextState("Win");	
+	}
+
+	if(restaurant->getPlankServed()){
+		setFinished(true);
+		setNextState("Lose");
+
 	}
 
 }
