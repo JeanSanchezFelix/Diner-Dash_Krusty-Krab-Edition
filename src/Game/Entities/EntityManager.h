@@ -13,6 +13,7 @@ public:
 	void addEntity(Entity *e);
 	void addClient(Client *c);
 	void removeLeavingClients();
+	void removeAllClients(bool);
 	std::vector<Entity*> entities;
 	int getPL(){return players_left;}
 	int setPL(int num){return players_left = num;}

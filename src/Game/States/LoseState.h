@@ -1,10 +1,12 @@
 #pragma once
 #include "State.h"
 #include "Button.h"
+#include "GameState.h"
 
 class LoseState: public State{
 
     private:
+        GameState *game = new GameState();
         ofImage game_over_screen;
         ofImage restartButtonImg;
         Button* restartButton;

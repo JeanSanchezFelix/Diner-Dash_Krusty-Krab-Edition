@@ -161,8 +161,7 @@ void Restaurant::serveClient(){
         setPlankStatus(true);
     }
     if(entityManager->firstClient!= nullptr){
-        // money += entityManager->firstClient->serve(player->getBurger());
-        money += 100;
+        money += entityManager->firstClient->serve(player->getBurger());
     }
 }
 void Restaurant::keyPressed(int key){
@@ -176,4 +175,9 @@ void Restaurant::keyPressed(int key){
 void Restaurant::keyReleased(int key) {
     player->keyReleased(key);
 
+}
+
+
+void Restaurant::restartBurger(){
+     player->getBurger()->clear();
 }

@@ -47,6 +47,11 @@ void ofApp::update(){
 				sound.load("Spongebob_Steel_Sting.wav");
 				sound.setLoop(false);
 				sound.play();
+				SecondSound.load("Oh_Brother_this_Guy_Stinks.wav");
+				SecondSound.setLoop(false);
+				SecondSound.play();
+
+
 			}else if(currentState->getNextState() == "Win"){
 				currentState = winState;
 				sound.load("Ocean_Man_Spongebob.wav");

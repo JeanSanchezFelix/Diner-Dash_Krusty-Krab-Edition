@@ -42,12 +42,12 @@ void PauseState::render() {
 	krustyFont->render("While the game is pause you can resume it with 'g' or go to the menu with 'm'", 83, 421 + 30);
 
     krustyFont_H->render("Keep in mind this special characters: ", 53, 510);    
-    Bubble_Bass.draw(90, 520, 64*2, 72*2);
-    krustyFont_H->render("Bubble Bass", 83, ofGetHeight()/2 + 310);
-    krustyFont->render("With this character you'll", 235, 550);
-    krustyFont->render("need give him his order", 235, 550 + 30);
-    krustyFont->render("before he goes, or he'll", 235, 550 + 30*2);
-    krustyFont->render("take half of your money", 235, 550 + 30*3);
+    Bubble_Bass.draw(50, 530, 64*2, 72*2);
+    krustyFont_H->render("Bubble Bass", 43, ofGetHeight()/2 + 325);
+    krustyFont->render("With this character you'll", 195, 550);
+    krustyFont->render("need give him his order", 195, 550 + 30);
+    krustyFont->render("before he goes, or he'll", 195, 550 + 30*2);
+    krustyFont->render("take half of your money", 195, 550 + 30*3);
 
     Plankton.draw(435, 530, 64*2, 72*2);
     krustyFont_H->render("Plankton (In disguise)", 439, ofGetHeight()/2 + 325);
@@ -58,10 +58,6 @@ void PauseState::render() {
 
     playButton->render(ofGetWidth()-380, ofGetHeight()-550,ofGetWidth()/5, ofGetHeight()/7);
     quitButton->render(ofGetWidth()-200,ofGetHeight()-550, ofGetWidth()/5, ofGetHeight()/7);
-
-    // krustyFont_H->render("Plankton", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 250);
-    // krustyFont->render("Whatever you do, do not serve him his order, or you'll instantly lose", ofGetWidth()/2 - 340 , ofGetHeight()/2 + 200);
-
 }
 
 void PauseState::keyPressed(int key){

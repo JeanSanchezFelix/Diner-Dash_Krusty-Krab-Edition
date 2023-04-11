@@ -26,6 +26,7 @@ class Restaurant {
         int money = 0;
         int ClientRandomizer=0;
         bool plankServed = false;
+        Burger* b;
 
         
     public:
@@ -55,7 +56,11 @@ class Restaurant {
         void render();
         void keyPressed(int key);
         void keyReleased(int key);
-        std::vector<ofImage> resetPeople(){return people;}
+        void restartBurger();
+
+
+
+        
         int getMoney(){return money;}
         int setMoney(int num){return money = num;}
         int restaurant_getPL(){
@@ -68,5 +73,10 @@ class Restaurant {
 		    return plankServed = status;
 	    }
 	    bool getPlankStatus(){return plankServed;}
+
+        auto getAllLeavingClients(bool leavingClient){
+            return entityManager->removeAllClients(leavingClient);
+
+        }
         
 };

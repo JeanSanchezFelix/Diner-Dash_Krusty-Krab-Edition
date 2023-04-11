@@ -11,16 +11,22 @@ void EntityManager::tick(){
 }
 
 void EntityManager::removeLeavingClients(){
+    removeAllClients(true);
+
+}
+
+void EntityManager::removeAllClients(bool leavingClient){
 
     // Remove all clients that are leaving
     Client* tempClient = firstClient;
     Client* prevClient = nullptr;
     Inspector* isInspec = dynamic_cast<Inspector*>(tempClient);
+
     while(tempClient != nullptr){
-        if(tempClient->isLeaving){
+        if(tempClient->isLeaving || !leavingClient){
+            //Checking whether
             if(tempClient->getPatience()== 0){
                 players_left++;
-                // players_left = 10;
                 if(isInspec){
                     setInspecStatus(true);
                 }
@@ -40,6 +46,9 @@ void EntityManager::removeLeavingClients(){
         }
     }
 }
+
+
+
 void EntityManager::render(){
     for(unsigned int i=0; i<entities.size(); i++){
         entities[i]->render();
