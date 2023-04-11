@@ -7,6 +7,7 @@ class PreviewState: public State{
     private:
         ofImage preview_screen;
         ofImage Bubble_Bass;
+        ofImage Plankton;
         GameFont *krustyFont_H;
         GameFont *krustyFont;
         ofTrueTypeFont loadingFont;
