@@ -55,9 +55,14 @@ class Restaurant {
         void render();
         void keyPressed(int key);
         void keyReleased(int key);
+        std::vector<ofImage> resetPeople(){return people;}
         int getMoney(){return money;}
+        int setMoney(int num){return money = num;}
         int restaurant_getPL(){
             return entityManager->getPL();
+        }
+        int restSetPL(int num){
+            return entityManager->setPL(num);
         }
         bool setPlankStatus(bool status){
 		    return plankServed = status;

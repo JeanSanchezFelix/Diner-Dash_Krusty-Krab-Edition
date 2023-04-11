@@ -1,13 +1,13 @@
 #pragma once
 #include "State.h"
 #include "Button.h"
-// #include "GameState.h"
+#include "GameState.h"
 
 
 class WinState: public State{
 
     private:
-        // GameState* game;
+        GameState *game = new GameState();
         ofImage win_screen;
         ofImage restartButtonImg;
         Button* restartButton;

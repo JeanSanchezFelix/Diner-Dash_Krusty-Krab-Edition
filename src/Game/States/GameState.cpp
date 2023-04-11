@@ -40,4 +40,9 @@ void GameState::keyReleased(int key){
 void GameState::reset(){
 	setFinished(false);
 	setNextState("");
+	restaurant->setMoney(0);
+	restaurant->restSetPL(0);
+	restaurant->getPeople().clear();
+	// restaurant.Restaurant();
+
 }
