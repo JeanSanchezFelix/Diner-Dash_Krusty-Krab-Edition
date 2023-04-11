@@ -4,7 +4,7 @@ LoseState::LoseState() {
     restartButtonImg.load("images/Restart_Button.png");
     quitButtonImg.load("images/Quit_Button.png");
     quitButton = new Button(ofGetWidth()-600,ofGetHeight()-380, ofGetWidth()/5, ofGetHeight()/7, quitButtonImg );
-    restartButton = new Button(ofGetWidth()-750, ofGetHeight()-380,ofGetWidth()/5, ofGetHeight()/7, restartButtonImg);
+    restartButton = new Button(ofGetWidth()-780, ofGetHeight()-380,ofGetWidth()/5, ofGetHeight()/7, restartButtonImg);
     game_over_screen.load("images/game_over_screen.jpg");
 
 }

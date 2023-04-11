@@ -1,5 +1,6 @@
 #pragma once
 #include "State.h"
+#include "Button.h"
 
 
 class PreviewState: public State{
@@ -10,6 +11,14 @@ class PreviewState: public State{
         GameFont *krustyFont_H;
         GameFont *krustyFont;
         ofTrueTypeFont loadingFont;
+
+        ofImage playButtonImg;
+        Button* playButton;
+
+
+
+        ofImage quitButtonImg;
+        Button* quitButton;
 
     public: 
         PreviewState();
