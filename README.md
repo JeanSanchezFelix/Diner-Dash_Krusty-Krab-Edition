@@ -1,32 +1,46 @@
-# PA2: openFrameworks Diner Dash
-The objective for this first project is to complete the game called Diner Dash with the help of openFrameworks!
+# Diner Dash {Krusty Krab Edition}
 
-# What it can do out of the box
-After compiling and running the project for the first time, you should be able to do a couple of things:
+## Overview
 
-- The chef will move from one side of the screen to another
-- Using the 'e' key, you can select ingredients to add to your burger.
-- Using the 's' key, you can serve customers in line the burger you have created.
+Welcome to the **Krusty Krab Restaurant Simulator**, a 2D restaurant management game where you step into the shoes of SpongeBob SquarePants, the finest fry cook in Bikini Bottom. As SpongeBob, you'll be preparing and serving Krabby Patties and other delicious items to a variety of undersea customers, including some of the most famous residents of Bikini Bottom. The game is built using C++ with the OpenFrameworks library, offering a visually immersive and fun gameplay experience.
 
-# Classes
-This project has a lot of classes and OOP concepts in it, so make sure to study the code base well and familiarize yourself with OOP.
+## Features
 
-# Student Info
-Please fill out the information below for each member of the team:
+- **Familiar Characters:** Serve iconic characters from Bikini Bottom, including regulars like Fred, Old Man Jenkins, and even special guests like Plankton (In disguese) and Bubble Bass.
+- **Krabby Patty Assembly:** Customize Krabby Patties with ingredients like lettuce, cheese, tomato, and special sauce, all while under the pressure of hungry customers.
+- **Krusty Krab Theme:** Enjoy a game environment that faithfully recreates the beloved Krusty Krab restaurant, complete with familiar background elements, unique orhcid decor and music.
+- **Dynamic Challenges:** Handle the rush of customers, manage your ingredients, and keep an eye out for Bubble Bass who deducts half of your money if you get his order wrong, and Plankton posing as a customer, who might try to steal the Krabby Patty secret formula!
+
+## Installation
+
+1. **Install OpenFrameworks:** Ensure that OpenFrameworks is installed on your system. You can download it from [here](https://openframeworks.cc/download/).
+2. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/JeanSanchezFelix/Diner-Dash_Krusty-Krab-Edition.git
+   ```
+3. **Build the Project:** Open the project in an IDE that supports OpenFrameworks, such as Visual Studio or Xcode. Build and run the project.
+   ```sh
+   make -j6
+   make RunRelease
+   ```
+
+## How to Play
+
+- **Movement:** Use the arrow keys to move SpongeBob around the kitchen.
+- **Pick Up Ingredients:** Stand near an ingredient station and press the corresponding key to pick it up.
+- **Assemble Krabby Patties:** Add ingredients to the Krabby Patty by standing near a counter and pressing the corresponding key.
+- **Serve Customers:** Once a Krabby Patty is ready, press the 'S' key to serve it to the customer.
+- **Restart Patty:** If you make a mistake while preparing a Krabby Patty, press the 'R' key to restart it.
+- **Pause**: If you whant to pause the game you can just click 'P'
+
+## Contributions
 
 ### [ Jean P. I. Sánchez Félix: jeanpiere.sanchez@upr.edu ]
 
 ### [ Gabriel A. Marrero Rodriguez: gabriel.marrero9@upr.edu ]
 
-# Decorations
 
-- Added two orchids, added a cockroach in the middle, changed floor to Krusty Krab, burger background, also customers, burger and money indicator now have a background, the patty has a cooked sprite.
+## Acknowledgments
 
-- Added new preview screens and pause states, containing game instructions and buttons to change states when clicked, the states also have a custom font.
-
-- Change the sprites of the customers and the chef.
-
-- Added new music and sound effects.
-
-
-
+- **OpenFrameworks:** A versatile C++ toolkit for creative coding.
+- **Krusty Krab Theme:** Special thanks to the creators and artists behind the SpongeBob SquarePants series for inspiring this project.
